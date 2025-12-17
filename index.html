@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Whack-a-Mole Quiz Game</title>
+    <link rel="stylesheet" href="style.css?v=58">
+    <script src="script.js?v=12" defer></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>🎯 Whack-a-Mole Quiz</h1>
+            <div class="game-stats">
+                <div class="stat">
+                    <span class="label">Score:</span>
+                    <span class="value" id="score">0</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Time:</span>
+                    <span class="value" id="timer">240</span>
+                </div>
+                <div class="stat">
+                    <span class="label">Streak:</span>
+                    <span class="value" id="streak">0</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Game Area -->
+        <div class="game-container">
+            <!-- Current Question Display -->
+            <div class="current-question-section">
+                <div class="question-card" id="questionCard">
+                    <div class="question-text" id="questionText">Click Start to Begin!</div>
+                    <div class="question-feedback" id="questionFeedback"></div>
+                </div>
+            </div>
+
+            <!-- Moles and Pointer -->
+            <div class="moles-section">
+                <div class="ai-legend">
+                    <h3>🎯 AI Categories</h3>
+                    <div class="legend-items">
+                        <div class="legend-item"><span class="legend-dot blue"></span> Search Engine</div>
+                        <div class="legend-item"><span class="legend-dot green"></span> Traditional AI</div>
+                        <div class="legend-item"><span class="legend-dot purple"></span> Gen AI</div>
+                        <div class="legend-item"><span class="legend-dot red"></span> Agentic AI</div>
+                    </div>
+                </div>
+                
+                <div class="moles-grid">
+                    <!-- Fences on semicircular edge -->
+                    <img src="fence.png" alt="Fence Left" class="fence fence-left">
+                    <img src="fence.png" alt="Fence Center" class="fence fence-center">
+                    <img src="fence.png" alt="Fence Right" class="fence fence-right">
+                    
+                    <!-- Decorative elements on grass -->
+                    <img src="Stone.png" alt="Stone" class="decoration stone1">
+                    <img src="Stone.png" alt="Stone" class="decoration stone2">
+                    <img src="Mud.png" alt="Mud" class="decoration mud1">
+                    <img src="Mud.png" alt="Mud" class="decoration mud2">
+                    <img src="Pink_Flowers.png" alt="Pink Flowers" class="decoration flower1">
+                    <img src="Yellow_Flower.png" alt="Yellow Flower" class="decoration flower2">
+                    <img src="Red_Flower.png" alt="Red Flower" class="decoration flower3">
+                    
+                    <div class="mole-container" data-color="blue" data-ai-type="Search Engine">
+                        <div class="hole" data-label="Search Engine"></div>
+                    </div>
+
+                    <div class="mole-container" data-color="green" data-ai-type="Traditional AI">
+                        <div class="hole" data-label="Traditional AI"></div>
+                    </div>
+
+                    <div class="mole-container" data-color="purple" data-ai-type="Gen AI">
+                        <div class="hole" data-label="Gen AI"></div>
+                    </div>
+
+                    <div class="mole-container" data-color="red" data-ai-type="Agentic AI">
+                        <div class="hole" data-label="Agentic AI"></div>
+                    </div>
+                    
+                    <!-- Single mole that moves between holes -->
+                    <div class="mole" id="mole">
+                        <img src="mole.png?v=2" alt="Mole" class="mole-image">
+                    </div>
+                </div>
+
+                <!-- Pointer/Cursor -->
+                <div class="pointer" id="hammer">
+                    <img src="hammer.png" alt="Hammer" class="pointer-icon">
+                    <div class="pointer-glow"></div>
+                </div>
+            </div>
+
+            <!-- Control Buttons -->
+            <div class="controls-section">
+                <button class="start-btn" id="startBtn">Start Game</button>
+                <button class="restart-btn" id="restartBtn" style="display: none;">Restart Game</button>
+            </div>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div class="modal" id="gameOverModal">
+            <div class="modal-content">
+                <h2>🎉 Game Over!</h2>
+                <div class="final-score">
+                    <p>Final Score: <span id="finalScore">0</span></p>
+                    <p>Best Streak: <span id="bestStreak">0</span></p>
+                    <p>Accuracy: <span id="accuracy">0</span>%</p>
+                </div>
+                <button class="play-again-btn" id="playAgainBtn">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js?v=15"></script>
+</body>
+</html>
