@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Whack-a-Mole Quiz Game</title>
-    <link rel="stylesheet" href="style.css?v=58">
-    <script src="script.js?v=12" defer></script>
+    <link rel="stylesheet" href="style.css?v=61">
+    <script src="script.js?v=23" defer></script>
 </head>
 <body>
     <div class="container">
@@ -19,7 +19,7 @@
                 </div>
                 <div class="stat">
                     <span class="label">Time:</span>
-                    <span class="value" id="timer">240</span>
+                    <span class="value" id="timer">5:00</span>
                 </div>
                 <div class="stat">
                     <span class="label">Streak:</span>
@@ -100,6 +100,26 @@
                 <button class="restart-btn" id="restartBtn" style="display: none;">Restart Game</button>
             </div>
         </div>
+
+        <!-- Score Popup Message -->
+        <div class="score-popup" id="scorePopup">
+            <div class="popup-content">
+                <div class="popup-emoji">🎉</div>
+                <div class="popup-message">Congratulations!</div>
+                <div class="popup-points">+<span id="popupPoints">5</span> Points!</div>
+            </div>
+        </div>
+
+        <!-- Audio Elements -->
+        <audio id="backgroundMusic" loop>
+            <source src="Sound/Background_sound.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="correctSound">
+            <source src="Sound/correct_sound.mp3" type="audio/mpeg">
+        </audio>
+        <audio id="wrongSound">
+            <source src="Sound/wrong_sound.mp3" type="audio/mpeg">
+        </audio>
 
         <!-- Game Over Modal -->
         <div class="modal" id="gameOverModal">
