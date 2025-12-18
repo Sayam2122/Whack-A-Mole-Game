@@ -484,7 +484,7 @@ function handleWrongColor(container) {
         gameState.currentQuestionIndex++;
         updateCurrentQuestion();
         gameState.isShowingFeedback = false;
-    }, 4000);
+    }, 5000);
 }
 
 // Handle unanswered question (after 6 cycles)
