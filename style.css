@@ -799,12 +799,12 @@ header h1 {
     }
     
     .mole {
-        width: clamp(50px, 12.5vw, 66px);
-        height: clamp(50px, 12.5vw, 66px);
+        width: clamp(45px, 11vw, 60px);
+        height: clamp(45px, 11vw, 60px);
     }
     
     .mole.active {
-        bottom: clamp(35px, 8.5vw, 50px) !important;
+        bottom: clamp(25px, 6vw, 35px) !important;
     }
     
     #hammer {
@@ -863,19 +863,21 @@ header h1 {
     }
     
     .popup-content {
-        padding: clamp(20px, 5vw, 30px) clamp(25px, 6vw, 40px);
+        padding: clamp(15px, 3.5vw, 20px) clamp(20px, 4.5vw, 30px);
     }
     
     .popup-emoji {
-        font-size: clamp(2em, 8vw, 2.5em);
+        font-size: clamp(1.5em, 5vw, 2em);
+        margin-bottom: 8px;
     }
     
     .popup-message {
-        font-size: clamp(1.2em, 5vw, 1.5em);
+        font-size: clamp(1em, 3.5vw, 1.2em);
+        margin-bottom: 5px;
     }
     
     .popup-points {
-        font-size: clamp(1em, 4vw, 1.3em);
+        font-size: clamp(0.85em, 3vw, 1em);
     }
     
     .modal-content {
