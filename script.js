@@ -140,6 +140,7 @@ const mole = document.getElementById('mole');
 const backgroundMusic = document.getElementById('backgroundMusic');
 const correctSound = document.getElementById('correctSound');
 const wrongSound = document.getElementById('wrongSound');
+const whackSound = document.getElementById('whackSound');
 
 // Score Popup Elements
 const scorePopup = document.getElementById('scorePopup');
@@ -167,6 +168,12 @@ function initGame() {
     moleContainers.forEach(container => {
         container.addEventListener('click', handleMoleClick);
     });
+    
+    // Add click listener to entire moles-grid for whacking anywhere
+    const molesGrid = document.querySelector('.moles-grid');
+    if (molesGrid) {
+        molesGrid.addEventListener('click', handleGridClick);
+    }
 }
 
 // Generate questions from predefined list
@@ -326,6 +333,51 @@ function moveHammer() {
     setTimeout(moveHammer, gameState.hammerSpeed);
 }
 
+// Handle clicking anywhere on the grid (for whacking sound even without mole)
+function handleGridClick(event) {
+    if (!gameState.isPlaying) return;
+    
+    // Prevent clicks during feedback display
+    if (gameState.isShowingFeedback) return;
+    
+    // Check if click is on a mole container - let handleMoleClick handle those
+    if (event.target.closest('.mole-container')) {
+        return;
+    }
+    
+    // Play whack sound for empty area clicks
+    if (whackSound) {
+        whackSound.volume = 0.5;
+        whackSound.currentTime = 0;
+        whackSound.play().catch(err => console.log('Whack sound error:', err));
+    }
+    
+    // Animate hammer to click position
+    const panelRect = document.querySelector('.moles-section').getBoundingClientRect();
+    const clickX = event.clientX - panelRect.left;
+    const clickY = event.clientY - panelRect.top;
+    
+    // Move hammer to click position
+    hammer.style.transition = 'left 0.1s ease, top 0.1s ease';
+    hammer.style.left = `${clickX}px`;
+    hammer.style.top = `${clickY}px`;
+    
+    // Add hitting animation
+    hammer.classList.add('hitting');
+    
+    // Return to center after animation
+    setTimeout(() => {
+        hammer.classList.remove('hitting');
+        
+        const moleGrid = document.querySelector('.moles-grid').getBoundingClientRect();
+        const centerX = (moleGrid.left + moleGrid.right) / 2 - panelRect.left;
+        const centerY = (moleGrid.top + moleGrid.bottom) / 2 - panelRect.top;
+        
+        hammer.style.left = `${centerX}px`;
+        hammer.style.top = `${centerY}px`;
+    }, 300);
+}
+
 // Handle mole click
 function handleMoleClick(event) {
     if (!gameState.isPlaying) return;
@@ -339,20 +391,41 @@ function handleMoleClick(event) {
     
     if (!currentQuestion) return;
     
-    // Check if mole is currently in this hole
-    const moleRect = mole.getBoundingClientRect();
-    const containerRect = clickedContainer.getBoundingClientRect();
+    // Check if mole is actually in THIS container (as a child) and is active
+    const moleIsInThisContainer = clickedContainer.contains(mole);
+    const moleIsActive = mole.classList.contains('active');
     
-    // Simple overlap check
-    const isInHole = (
-        moleRect.left < containerRect.right &&
-        moleRect.right > containerRect.left &&
-        moleRect.top < containerRect.bottom &&
-        moleRect.bottom > containerRect.top &&
-        mole.classList.contains('active')
-    );
-    
-    if (!isInHole) return;
+    // If mole is not in this container or not active, just play whack sound and animate
+    if (!moleIsInThisContainer || !moleIsActive) {
+        // Play whack sound
+        if (whackSound) {
+            whackSound.volume = 0.5;
+            whackSound.currentTime = 0;
+            whackSound.play().catch(err => console.log('Whack sound error:', err));
+        }
+        
+        // Animate hammer to click position
+        const panelRect = document.querySelector('.moles-section').getBoundingClientRect();
+        const containerRect = clickedContainer.getBoundingClientRect();
+        const targetX = containerRect.left + containerRect.width / 2 - panelRect.left;
+        const targetY = containerRect.top + containerRect.height / 2 - panelRect.top;
+        
+        hammer.style.transition = 'left 0.1s ease, top 0.1s ease';
+        hammer.style.left = `${targetX}px`;
+        hammer.style.top = `${targetY}px`;
+        hammer.classList.add('hitting');
+        
+        setTimeout(() => {
+            hammer.classList.remove('hitting');
+            const moleGrid = document.querySelector('.moles-grid').getBoundingClientRect();
+            const centerX = (moleGrid.left + moleGrid.right) / 2 - panelRect.left;
+            const centerY = (moleGrid.top + moleGrid.bottom) / 2 - panelRect.top;
+            hammer.style.left = `${centerX}px`;
+            hammer.style.top = `${centerY}px`;
+        }, 300);
+        
+        return; // Don't count as hit
+    }
     
     gameState.totalClicks++;
     
@@ -370,6 +443,13 @@ function handleMoleClick(event) {
 
 // Animate hammer to mole and strike
 function animateHammerToMole(container) {
+    // Play whack sound
+    if (whackSound) {
+        whackSound.volume = 0.5;
+        whackSound.currentTime = 0;
+        whackSound.play().catch(err => console.log('Whack sound error:', err));
+    }
+    
     const panelRect = document.querySelector('.moles-section').getBoundingClientRect();
     const containerRect = container.getBoundingClientRect();
     
