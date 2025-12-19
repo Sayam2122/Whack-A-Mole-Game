@@ -863,24 +863,27 @@ header h1 {
     }
     
     .popup-content {
-        padding: clamp(5px, 1.2vw, 8px) clamp(10px, 2.2vw, 14px);
-        border-radius: clamp(10px, 2.5vw, 14px);
-        border: clamp(2px, 0.4vw, 2.5px) solid #ffffff;
-        max-width: 85vw;
+        padding: clamp(4px, 1vw, 6px) clamp(8px, 1.8vw, 11px);
+        border-radius: clamp(8px, 2vw, 12px);
+        border: clamp(1.5px, 0.3vw, 2px) solid #ffffff;
+        max-width: 80vw;
     }
     
     .popup-emoji {
-        font-size: clamp(0.85em, 3vw, 1.1em);
-        margin-bottom: 2px;
+        font-size: clamp(0.7em, 2.5vw, 0.95em);
+        margin-bottom: 1px;
+        line-height: 1;
     }
     
     .popup-message {
-        font-size: clamp(0.65em, 2.2vw, 0.8em);
-        margin-bottom: 2px;
+        font-size: clamp(0.55em, 1.9vw, 0.7em);
+        margin-bottom: 1px;
+        line-height: 1.1;
     }
     
     .popup-points {
-        font-size: clamp(0.55em, 1.9vw, 0.7em);
+        font-size: clamp(0.5em, 1.7vw, 0.65em);
+        line-height: 1;
     }
     
     .modal-content {
