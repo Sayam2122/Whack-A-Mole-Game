@@ -663,8 +663,14 @@ header h1 {
 }
 
 @media (max-width: 768px) {
+    body {
+        padding: 0;
+    }
+    
     header {
         padding: 10px 15px;
+        flex-direction: column;
+        gap: 10px;
     }
     
     header h1 {
@@ -674,275 +680,169 @@ header h1 {
     .game-stats {
         flex-direction: row;
         gap: 15px;
-        flex-wrap: wrap;
         justify-content: center;
     }
     
-    .stat {
-        min-width: 80px;
-    }
-    
     .stat .label {
-        font-size: 0.8em;
+        font-size: 0.75em;
     }
     
     .stat .value {
-        font-size: 1.3em;
+        font-size: 1.2em;
+    }
+    
+    .game-container {
+        gap: 15px;
+        padding: 10px;
+        min-height: auto;
+    }
+    
+    .current-question-section {
+        padding: 0 10px;
+        max-width: 100%;
     }
     
     .question-card {
         padding: 15px;
-        margin: 15px;
+        min-height: 80px;
     }
     
     .question-text {
-        font-size: 1.1em;
-        line-height: 1.4;
+        font-size: 1em;
     }
     
     .question-feedback {
-        font-size: 0.95em;
+        font-size: 0.9em;
         padding: 10px;
         margin-top: 10px;
     }
     
     .moles-section {
         padding: 15px;
-        min-height: 400px;
+        max-width: 100%;
+        margin: 0 10px;
+    }
+    
+    .legend {
+        padding: 8px 15px;
+        margin-bottom: 15px;
+    }
+    
+    .legend h3 {
+        font-size: 1em;
+        margin-bottom: 8px;
+    }
+    
+    .legend-items {
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+    
+    .legend-item {
+        font-size: 0.75em;
+        padding: 4px 8px;
+    }
+    
+    .legend-dot {
+        width: 10px;
+        height: 10px;
     }
     
     .moles-grid {
-        width: 90%;
-        height: 350px;
-        max-width: 450px;
+        width: 100%;
+        max-width: 350px;
+        height: 280px;
+        margin: 0 auto;
+    }
+    
+    .grass-area {
+        width: 100%;
+        max-width: 350px;
+        height: 280px;
     }
     
     .mole-container {
-        width: 100px;
-        height: 100px;
+        width: 70px;
+        height: 70px;
     }
     
     .hole {
-        width: 90px;
-        height: 40px;
+        width: 60px;
+        height: 30px;
     }
     
     .hole-label {
         font-size: 0.65em;
-        padding: 3px 6px;
+        padding: 2px 4px;
+        top: -18px;
     }
     
     .mole {
-        width: 70px;
-        height: auto;
+        width: 50px;
+        height: 50px;
     }
     
     #hammer {
-        width: 80px;
-        height: auto;
+        width: 50px;
+        height: 50px;
+    }
+    
+    .decorative-stone,
+    .decorative-mud,
+    .decorative-flower {
+        width: 25px;
+        height: 25px;
+    }
+    
+    .fence-image {
+        width: 60px;
+        height: 60px;
     }
     
     .controls-section {
         flex-direction: column;
         gap: 10px;
-        padding: 15px;
+        margin-top: 15px;
     }
     
-    .start-btn, .restart-btn, .play-again-btn {
-        padding: 12px 25px;
-        font-size: 1em;
-        width: 100%;
-        max-width: 250px;
-    }
-    
-    .legend {
-        padding: 15px;
-        margin: 15px;
-    }
-    
-    .legend h3 {
-        font-size: 1.1em;
-        margin-bottom: 10px;
-    }
-    
-    .legend-grid {
-        gap: 10px;
-    }
-    
-    .legend-item {
-        padding: 8px 12px;
-        font-size: 0.85em;
-    }
-    
-    .decoration {
-        width: 40px;
-        height: 40px;
-    }
-    
-    .fence {
-        width: 80px;
-        height: auto;
-    }
-    
-    .popup-content {
-        padding: 25px 35px;
-        border-radius: 20px;
-        border: 3px solid #ffffff;
-    }
-    
-    .popup-emoji {
-        font-size: 2.5em;
-        margin-bottom: 10px;
-    }
-    
-    .popup-message {
-        font-size: 1.6em;
-        margin-bottom: 8px;
-    }
-    
-    .popup-points {
-        font-size: 1.4em;
-    }
-}
-
-@media (max-width: 480px) {
-    body {
-        font-size: 14px;
-    }
-    
-    header h1 {
-        font-size: 1.3em;
-    }
-    
-    .game-stats {
-        gap: 10px;
-    }
-    
-    .stat {
-        min-width: 70px;
-    }
-    
-    .stat .label {
-        font-size: 0.7em;
-    }
-    
-    .stat .value {
-        font-size: 1.1em;
-    }
-    
-    .question-card {
-        padding: 12px;
-        margin: 10px;
-    }
-    
-    .question-text {
-        font-size: 0.95em;
-        line-height: 1.3;
-    }
-    
-    .question-feedback {
-        font-size: 0.85em;
-        padding: 8px;
-    }
-    
-    .moles-section {
-        padding: 10px;
-        min-height: 350px;
-    }
-    
-    .moles-grid {
-        width: 95%;
-        height: 300px;
-        max-width: 350px;
-    }
-    
-    .mole-container {
-        width: 80px;
-        height: 80px;
-    }
-    
-    .hole {
-        width: 70px;
-        height: 32px;
-    }
-    
-    .hole-label {
-        font-size: 0.55em;
-        padding: 2px 4px;
-    }
-    
-    .mole {
-        width: 55px;
-        height: auto;
-    }
-    
-    #hammer {
-        width: 60px;
-        height: auto;
-    }
-    
-    .start-btn, .restart-btn, .play-again-btn {
+    .start-btn,
+    .restart-btn {
         padding: 10px 20px;
         font-size: 0.9em;
     }
     
-    .legend {
-        padding: 12px;
-        margin: 10px;
-    }
-    
-    .legend h3 {
-        font-size: 1em;
-    }
-    
-    .legend-grid {
-        gap: 8px;
-    }
-    
-    .legend-item {
-        padding: 6px 10px;
-        font-size: 0.75em;
-    }
-    
-    .decoration {
-        width: 30px;
-        height: 30px;
-    }
-    
-    .fence {
-        width: 60px;
-        height: auto;
-    }
-    
     .popup-content {
-        padding: 20px 25px;
-        border-radius: 15px;
+        padding: 25px 35px;
     }
     
     .popup-emoji {
-        font-size: 2em;
+        font-size: 2.5em;
     }
     
     .popup-message {
-        font-size: 1.3em;
+        font-size: 1.5em;
     }
     
     .popup-points {
-        font-size: 1.1em;
+        font-size: 1.3em;
     }
     
-    .game-over-modal .modal-content {
-        padding: 25px;
+    .modal-content {
         width: 90%;
         max-width: 350px;
+        padding: 25px;
     }
     
-    .game-over-modal h2 {
+    .modal-content h2 {
         font-size: 1.8em;
     }
     
-    .game-over-modal .final-stats {
+    .modal-stats {
         gap: 15px;
+    }
+    
+    .modal-stat-value {
+        font-size: 2em;
     }
 }
 
