@@ -14,6 +14,8 @@ body {
     padding: 0;
     margin: 0;
     overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
 }
 
 .container {
@@ -843,6 +845,201 @@ header h1 {
     
     .modal-stat-value {
         font-size: 2em;
+    }
+}
+
+/* Extra small phones (iPhone SE, small Androids) */
+@media (max-width: 430px) {
+    header {
+        padding: 8px 10px;
+    }
+    
+    header h1 {
+        font-size: 1.3em;
+    }
+    
+    .game-stats {
+        gap: 10px;
+    }
+    
+    .stat .label {
+        font-size: 0.7em;
+    }
+    
+    .stat .value {
+        font-size: 1em;
+    }
+    
+    .game-container {
+        gap: 10px;
+        padding: 5px;
+    }
+    
+    .current-question-section {
+        padding: 0 5px;
+    }
+    
+    .question-card {
+        padding: 12px;
+        min-height: 70px;
+    }
+    
+    .question-text {
+        font-size: 0.9em;
+        line-height: 1.3;
+    }
+    
+    .question-feedback {
+        font-size: 0.85em;
+        padding: 8px;
+    }
+    
+    .moles-section {
+        padding: 10px;
+        margin: 0 5px;
+    }
+    
+    .legend {
+        padding: 6px 10px;
+        margin-bottom: 10px;
+    }
+    
+    .legend h3 {
+        font-size: 0.9em;
+        margin-bottom: 6px;
+    }
+    
+    .legend-items {
+        gap: 6px;
+    }
+    
+    .legend-item {
+        font-size: 0.7em;
+        padding: 3px 6px;
+    }
+    
+    .legend-dot {
+        width: 8px;
+        height: 8px;
+    }
+    
+    .moles-grid {
+        width: 100%;
+        max-width: 300px;
+        height: 240px;
+    }
+    
+    .grass-area {
+        width: 100%;
+        max-width: 300px;
+        height: 240px;
+    }
+    
+    .mole-container {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .hole {
+        width: 50px;
+        height: 25px;
+    }
+    
+    .hole-label {
+        font-size: 0.6em;
+        padding: 2px 3px;
+        top: -16px;
+    }
+    
+    .mole {
+        width: 45px;
+        height: 45px;
+    }
+    
+    #hammer {
+        width: 45px;
+        height: 45px;
+    }
+    
+    .decorative-stone,
+    .decorative-mud,
+    .decorative-flower {
+        width: 20px;
+        height: 20px;
+    }
+    
+    .fence-image {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .controls-section {
+        margin-top: 10px;
+        gap: 8px;
+    }
+    
+    .start-btn,
+    .restart-btn {
+        padding: 8px 16px;
+        font-size: 0.85em;
+    }
+    
+    .popup-content {
+        padding: 20px 30px;
+    }
+    
+    .popup-emoji {
+        font-size: 2em;
+    }
+    
+    .popup-message {
+        font-size: 1.3em;
+    }
+    
+    .popup-points {
+        font-size: 1.1em;
+    }
+    
+    .modal-content {
+        width: 92%;
+        padding: 20px;
+    }
+    
+    .modal-content h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Large phones (iPhone Pro Max, Nothing 3a Pro, etc.) */
+@media (min-width: 431px) and (max-width: 768px) {
+    .moles-grid {
+        max-width: 380px;
+        height: 300px;
+    }
+    
+    .grass-area {
+        max-width: 380px;
+        height: 300px;
+    }
+    
+    .mole-container {
+        width: 75px;
+        height: 75px;
+    }
+    
+    .hole {
+        width: 65px;
+        height: 32px;
+    }
+    
+    .mole {
+        width: 55px;
+        height: 55px;
+    }
+    
+    #hammer {
+        width: 55px;
+        height: 55px;
     }
 }
 
