@@ -875,14 +875,14 @@ header h1 {
     }
     
     .popup-emoji {
-        font-size: clamp(0.45em, 1.6vw, 0.65em);
+        font-size: clamp(0.4em, 1.5vw, 0.6em);
         margin-bottom: 1px;
         line-height: 1;
         display: block;
     }
     
     .popup-message {
-        font-size: clamp(0.32em, 1.2vw, 0.45em);
+        font-size: clamp(0.28em, 1.1vw, 0.4em);
         margin-bottom: 1px;
         line-height: 1;
         display: block;
@@ -892,7 +892,7 @@ header h1 {
     }
     
     .popup-points {
-        font-size: clamp(0.32em, 1.1vw, 0.44em);
+        font-size: clamp(0.28em, 1vw, 0.4em);
         line-height: 1;
         display: block;
         text-align: center;
