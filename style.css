@@ -868,27 +868,34 @@ header h1 {
         border: clamp(1.5px, 0.3vw, 2px) solid #ffffff;
         max-width: 80vw;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
     }
     
     .popup-emoji {
-        font-size: clamp(0.6em, 2.2vw, 0.85em);
+        font-size: clamp(0.5em, 1.8vw, 0.7em);
         margin-bottom: 1px;
         line-height: 1;
         display: block;
     }
     
     .popup-message {
-        font-size: clamp(0.48em, 1.7vw, 0.62em);
+        font-size: clamp(0.38em, 1.4vw, 0.52em);
         margin-bottom: 1px;
-        line-height: 1.1;
+        line-height: 1;
         display: block;
         word-wrap: break-word;
+        text-align: center;
+        white-space: nowrap;
     }
     
     .popup-points {
-        font-size: clamp(0.45em, 1.5vw, 0.58em);
+        font-size: clamp(0.38em, 1.3vw, 0.5em);
         line-height: 1;
         display: block;
+        text-align: center;
     }
     
     .modal-content {
