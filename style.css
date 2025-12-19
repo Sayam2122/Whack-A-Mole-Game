@@ -694,9 +694,11 @@ header h1 {
     }
     
     .game-container {
-        gap: 10px;
-        padding: 5px;
+        gap: 8px;
+        padding: 3px;
         min-height: auto;
+        overflow-y: auto;
+        max-height: 95vh;
     }
     
     .current-question-section {
@@ -722,109 +724,111 @@ header h1 {
     }
     
     .moles-section {
-        padding: 10px 5px;
+        padding: 5px 5px 10px 5px;
         max-width: 100%;
-        margin: 0 5px;
+        margin: 0 auto;
         min-height: auto;
+        max-height: 50vh;
     }
     
     .ai-legend {
-        margin-top: 15px;
-        margin-bottom: 15px;
-    }
-    
-    .legend {
-        padding: 6px 10px;
+        margin-top: 10px;
         margin-bottom: 10px;
     }
     
+    .legend {
+        padding: 5px 8px;
+        margin-bottom: 8px;
+    }
+    
     .legend h3 {
-        font-size: clamp(0.85em, 3vw, 1em);
-        margin-bottom: 6px;
+        font-size: clamp(0.75em, 2.5vw, 0.9em);
+        margin-bottom: 4px;
     }
     
     .legend-items {
-        gap: 6px;
+        gap: 4px;
         flex-wrap: wrap;
         justify-content: center;
     }
     
     .legend-item {
-        font-size: clamp(0.65em, 2.5vw, 0.75em);
-        padding: 3px 6px;
+        font-size: clamp(0.6em, 2vw, 0.7em);
+        padding: 2px 5px;
     }
     
     .legend-dot {
-        width: 8px;
-        height: 8px;
+        width: 7px;
+        height: 7px;
     }
     
     .moles-grid {
-        width: 95vw;
-        max-width: 400px;
-        height: clamp(250px, 60vw, 320px);
+        width: 92vw;
+        max-width: 340px;
+        height: clamp(220px, 52vw, 280px);
         margin: 0 auto;
-        padding-top: clamp(60px, 15vw, 100px);
+        padding-top: clamp(50px, 12vw, 80px);
     }
     
     .grass-area {
-        width: 95vw;
-        max-width: 400px;
-        height: clamp(250px, 60vw, 320px);
+        width: 92vw;
+        max-width: 340px;
+        height: clamp(220px, 52vw, 280px);
     }
     
     .mole-container {
-        width: clamp(55px, 15vw, 75px);
-        height: clamp(55px, 15vw, 75px);
+        width: clamp(50px, 13vw, 68px);
+        height: clamp(50px, 13vw, 68px);
     }
     
     .hole {
-        width: clamp(45px, 12vw, 65px);
-        height: clamp(22px, 6vw, 32px);
+        width: clamp(42px, 11vw, 58px);
+        height: clamp(20px, 5.5vw, 29px);
     }
     
     .hole-label {
-        font-size: clamp(0.55em, 2vw, 0.7em);
-        padding: 2px 3px;
-        top: -15px;
+        font-size: clamp(0.5em, 1.8vw, 0.65em);
+        padding: 1px 2px;
+        top: -13px;
         white-space: nowrap;
     }
     
     .mole {
-        width: clamp(40px, 11vw, 55px);
-        height: clamp(40px, 11vw, 55px);
+        width: clamp(38px, 10vw, 50px);
+        height: clamp(38px, 10vw, 50px);
     }
     
     #hammer {
-        width: clamp(40px, 11vw, 55px);
-        height: clamp(40px, 11vw, 55px);
+        width: clamp(38px, 10vw, 50px);
+        height: clamp(38px, 10vw, 50px);
     }
     
     .decorative-stone,
     .decorative-mud,
     .decorative-flower {
-        width: clamp(18px, 5vw, 25px);
-        height: clamp(18px, 5vw, 25px);
+        width: clamp(15px, 4.5vw, 22px);
+        height: clamp(15px, 4.5vw, 22px);
     }
     
     .fence-image {
-        width: clamp(45px, 12vw, 60px);
-        height: clamp(45px, 12vw, 60px);
+        width: clamp(40px, 10vw, 55px);
+        height: clamp(40px, 10vw, 55px);
     }
     
     .controls-section {
         flex-direction: column;
-        gap: 8px;
-        margin-top: 10px;
+        gap: 6px;
+        margin-top: 8px;
+        margin-bottom: 8px;
         padding: 0 10px;
     }
     
     .start-btn,
     .restart-btn {
-        padding: clamp(8px, 2vw, 10px) clamp(16px, 4vw, 20px);
-        font-size: clamp(0.8em, 3vw, 0.9em);
+        padding: clamp(7px, 1.8vw, 9px) clamp(14px, 3.5vw, 18px);
+        font-size: clamp(0.75em, 2.8vw, 0.85em);
         width: 100%;
-        max-width: 200px;
+        max-width: 180px;
     }
     
     .popup-content {
