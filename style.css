@@ -786,21 +786,35 @@ header h1 {
         height: clamp(22px, 5.4vw, 29px);
     }
     
+    .hole::after {
+        font-size: clamp(0.5em, 1.8vw, 0.65em) !important;
+        bottom: clamp(-25px, -6vw, -20px);
+    }
+    
     .hole-label {
-        font-size: clamp(0.55em, 2.2vw, 0.7em);
+        font-size: clamp(0.5em, 1.8vw, 0.65em);
         padding: 2px 3px;
         top: -15px;
         white-space: nowrap;
     }
     
     .mole {
-        width: clamp(67px, 16.7vw, 89px);
-        height: clamp(67px, 16.7vw, 89px);
+        width: clamp(50px, 12.5vw, 66px);
+        height: clamp(50px, 12.5vw, 66px);
+    }
+    
+    .mole.active {
+        bottom: clamp(35px, 8.5vw, 50px) !important;
     }
     
     #hammer {
-        width: clamp(40px, 10vw, 53px);
-        height: clamp(40px, 10vw, 53px);
+        width: clamp(35px, 8.5vw, 46px);
+        height: clamp(35px, 8.5vw, 46px);
+    }
+    
+    .pointer-icon {
+        width: clamp(35px, 8.5vw, 46px);
+        height: clamp(35px, 8.5vw, 46px);
     }
     
     .stone1, .stone2 {
