@@ -182,7 +182,7 @@ header h1 {
     box-shadow: none;
     position: relative;
     width: 100%;
-    max-width: 900px;
+    max-width: min(900px, 95vw);
     min-height: 600px;
     display: flex;
     flex-direction: column;
@@ -247,7 +247,7 @@ header h1 {
 .moles-grid {
     position: relative;
     width: 100%;
-    max-width: 1000px;
+    max-width: min(1000px, 90vw);
     height: 500px;
     margin: 0 auto;
     background: #77cf00;
@@ -670,233 +670,67 @@ header h1 {
     }
     
     header {
-        padding: 10px 15px;
+        padding: 8px 10px;
         flex-direction: column;
-        gap: 10px;
+        gap: 8px;
     }
     
     header h1 {
-        font-size: 1.5em;
+        font-size: clamp(1.2em, 4vw, 1.5em);
     }
     
     .game-stats {
         flex-direction: row;
-        gap: 15px;
+        gap: clamp(10px, 3vw, 15px);
         justify-content: center;
     }
     
     .stat .label {
-        font-size: 0.75em;
+        font-size: clamp(0.65em, 2vw, 0.75em);
     }
     
     .stat .value {
-        font-size: 1.2em;
-    }
-    
-    .game-container {
-        gap: 15px;
-        padding: 10px;
-        min-height: auto;
-    }
-    
-    .current-question-section {
-        padding: 0 10px;
-        max-width: 100%;
-    }
-    
-    .question-card {
-        padding: 15px;
-        min-height: 80px;
-    }
-    
-    .question-text {
-        font-size: 1em;
-    }
-    
-    .question-feedback {
-        font-size: 0.9em;
-        padding: 10px;
-        margin-top: 10px;
-    }
-    
-    .moles-section {
-        padding: 15px;
-        max-width: 100%;
-        margin: 0 10px;
-    }
-    
-    .legend {
-        padding: 8px 15px;
-        margin-bottom: 15px;
-    }
-    
-    .legend h3 {
-        font-size: 1em;
-        margin-bottom: 8px;
-    }
-    
-    .legend-items {
-        gap: 8px;
-        flex-wrap: wrap;
-    }
-    
-    .legend-item {
-        font-size: 0.75em;
-        padding: 4px 8px;
-    }
-    
-    .legend-dot {
-        width: 10px;
-        height: 10px;
-    }
-    
-    .moles-grid {
-        width: 100%;
-        max-width: 350px;
-        height: 280px;
-        margin: 0 auto;
-    }
-    
-    .grass-area {
-        width: 100%;
-        max-width: 350px;
-        height: 280px;
-    }
-    
-    .mole-container {
-        width: 70px;
-        height: 70px;
-    }
-    
-    .hole {
-        width: 60px;
-        height: 30px;
-    }
-    
-    .hole-label {
-        font-size: 0.65em;
-        padding: 2px 4px;
-        top: -18px;
-    }
-    
-    .mole {
-        width: 50px;
-        height: 50px;
-    }
-    
-    #hammer {
-        width: 50px;
-        height: 50px;
-    }
-    
-    .decorative-stone,
-    .decorative-mud,
-    .decorative-flower {
-        width: 25px;
-        height: 25px;
-    }
-    
-    .fence-image {
-        width: 60px;
-        height: 60px;
-    }
-    
-    .controls-section {
-        flex-direction: column;
-        gap: 10px;
-        margin-top: 15px;
-    }
-    
-    .start-btn,
-    .restart-btn {
-        padding: 10px 20px;
-        font-size: 0.9em;
-    }
-    
-    .popup-content {
-        padding: 25px 35px;
-    }
-    
-    .popup-emoji {
-        font-size: 2.5em;
-    }
-    
-    .popup-message {
-        font-size: 1.5em;
-    }
-    
-    .popup-points {
-        font-size: 1.3em;
-    }
-    
-    .modal-content {
-        width: 90%;
-        max-width: 350px;
-        padding: 25px;
-    }
-    
-    .modal-content h2 {
-        font-size: 1.8em;
-    }
-    
-    .modal-stats {
-        gap: 15px;
-    }
-    
-    .modal-stat-value {
-        font-size: 2em;
-    }
-}
-
-/* Extra small phones (iPhone SE, small Androids) */
-@media (max-width: 430px) {
-    header {
-        padding: 8px 10px;
-    }
-    
-    header h1 {
-        font-size: 1.3em;
-    }
-    
-    .game-stats {
-        gap: 10px;
-    }
-    
-    .stat .label {
-        font-size: 0.7em;
-    }
-    
-    .stat .value {
-        font-size: 1em;
+        font-size: clamp(1em, 3vw, 1.2em);
     }
     
     .game-container {
         gap: 10px;
         padding: 5px;
+        min-height: auto;
     }
     
     .current-question-section {
         padding: 0 5px;
+        max-width: 100%;
+        margin: 10px auto;
     }
     
     .question-card {
-        padding: 12px;
-        min-height: 70px;
+        padding: clamp(10px, 3vw, 15px);
+        min-height: auto;
     }
     
     .question-text {
-        font-size: 0.9em;
-        line-height: 1.3;
+        font-size: clamp(0.85em, 3.5vw, 1em);
+        line-height: 1.4;
     }
     
     .question-feedback {
-        font-size: 0.85em;
+        font-size: clamp(0.8em, 2.8vw, 0.9em);
         padding: 8px;
+        margin-top: 8px;
     }
     
     .moles-section {
-        padding: 10px;
+        padding: 10px 5px;
+        max-width: 100%;
         margin: 0 5px;
+        min-height: auto;
+    }
+    
+    .ai-legend {
+        margin-top: 15px;
+        margin-bottom: 15px;
     }
     
     .legend {
@@ -905,16 +739,18 @@ header h1 {
     }
     
     .legend h3 {
-        font-size: 0.9em;
+        font-size: clamp(0.85em, 3vw, 1em);
         margin-bottom: 6px;
     }
     
     .legend-items {
         gap: 6px;
+        flex-wrap: wrap;
+        justify-content: center;
     }
     
     .legend-item {
-        font-size: 0.7em;
+        font-size: clamp(0.65em, 2.5vw, 0.75em);
         padding: 3px 6px;
     }
     
@@ -924,122 +760,111 @@ header h1 {
     }
     
     .moles-grid {
-        width: 100%;
-        max-width: 300px;
-        height: 240px;
+        width: 95vw;
+        max-width: 400px;
+        height: clamp(250px, 60vw, 320px);
+        margin: 0 auto;
+        padding-top: clamp(60px, 15vw, 100px);
     }
     
     .grass-area {
-        width: 100%;
-        max-width: 300px;
-        height: 240px;
+        width: 95vw;
+        max-width: 400px;
+        height: clamp(250px, 60vw, 320px);
     }
     
     .mole-container {
-        width: 60px;
-        height: 60px;
+        width: clamp(55px, 15vw, 75px);
+        height: clamp(55px, 15vw, 75px);
     }
     
     .hole {
-        width: 50px;
-        height: 25px;
+        width: clamp(45px, 12vw, 65px);
+        height: clamp(22px, 6vw, 32px);
     }
     
     .hole-label {
-        font-size: 0.6em;
+        font-size: clamp(0.55em, 2vw, 0.7em);
         padding: 2px 3px;
-        top: -16px;
+        top: -15px;
+        white-space: nowrap;
     }
     
     .mole {
-        width: 45px;
-        height: 45px;
+        width: clamp(40px, 11vw, 55px);
+        height: clamp(40px, 11vw, 55px);
     }
     
     #hammer {
-        width: 45px;
-        height: 45px;
+        width: clamp(40px, 11vw, 55px);
+        height: clamp(40px, 11vw, 55px);
     }
     
     .decorative-stone,
     .decorative-mud,
     .decorative-flower {
-        width: 20px;
-        height: 20px;
+        width: clamp(18px, 5vw, 25px);
+        height: clamp(18px, 5vw, 25px);
     }
     
     .fence-image {
-        width: 50px;
-        height: 50px;
+        width: clamp(45px, 12vw, 60px);
+        height: clamp(45px, 12vw, 60px);
     }
     
     .controls-section {
-        margin-top: 10px;
+        flex-direction: column;
         gap: 8px;
+        margin-top: 10px;
+        padding: 0 10px;
     }
     
     .start-btn,
     .restart-btn {
-        padding: 8px 16px;
-        font-size: 0.85em;
+        padding: clamp(8px, 2vw, 10px) clamp(16px, 4vw, 20px);
+        font-size: clamp(0.8em, 3vw, 0.9em);
+        width: 100%;
+        max-width: 200px;
     }
     
     .popup-content {
-        padding: 20px 30px;
+        padding: clamp(20px, 5vw, 30px) clamp(25px, 6vw, 40px);
     }
     
     .popup-emoji {
-        font-size: 2em;
+        font-size: clamp(2em, 8vw, 2.5em);
     }
     
     .popup-message {
-        font-size: 1.3em;
+        font-size: clamp(1.2em, 5vw, 1.5em);
     }
     
     .popup-points {
-        font-size: 1.1em;
+        font-size: clamp(1em, 4vw, 1.3em);
     }
     
     .modal-content {
         width: 92%;
-        padding: 20px;
+        max-width: 380px;
+        padding: clamp(18px, 5vw, 25px);
     }
     
     .modal-content h2 {
-        font-size: 1.5em;
-    }
-}
-
-/* Large phones (iPhone Pro Max, Nothing 3a Pro, etc.) */
-@media (min-width: 431px) and (max-width: 768px) {
-    .moles-grid {
-        max-width: 380px;
-        height: 300px;
+        font-size: clamp(1.5em, 6vw, 1.8em);
     }
     
-    .grass-area {
-        max-width: 380px;
-        height: 300px;
+    .modal-stats {
+        gap: 12px;
+        flex-wrap: wrap;
     }
     
-    .mole-container {
-        width: 75px;
-        height: 75px;
+    .modal-stat-value {
+        font-size: clamp(1.6em, 6vw, 2em);
     }
     
-    .hole {
-        width: 65px;
-        height: 32px;
-    }
-    
-    .mole {
-        width: 55px;
-        height: 55px;
-    }
-    
-    #hammer {
-        width: 55px;
-        height: 55px;
+    .play-again-btn {
+        padding: clamp(8px, 2vw, 10px) clamp(16px, 4vw, 20px);
+        font-size: clamp(0.8em, 3vw, 0.9em);
     }
 }
 
