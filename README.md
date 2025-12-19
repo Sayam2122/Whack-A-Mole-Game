@@ -33,13 +33,10 @@ Test your knowledge of AI types by whacking the correct mole! Each question pres
 
 ## 🎯 Scoring System
 
-- **First Cycle (First 4 moves):** +10 points per correct answer
-- **Second Cycle (Next 4 moves):** +7 points per correct answer
-- **Third Cycle (Next 4 moves):** +5 points per correct answer
-- **Fourth Cycle (Next 4 moves):** +3 points per correct answer
-- **Fifth Cycle (Next 4 moves):** +2 points per correct answer
-- **Sixth+ Cycle:** +1 point per correct answer
-- After 6 cycles, the question is marked as unanswered and moves to the next
+- **Cycles 1-2 (First 8 moves):** +5 points per correct answer
+- **Cycles 3-4 (Next 8 moves):** +3 points per correct answer
+- **Cycles 5-6 (Next 8 moves):** +2 points per correct answer
+- After 6 cycles, the question is marked as unanswered and moves to the next question
 
 ## 🚀 How to Play
 
